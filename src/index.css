@@ -1,0 +1,12 @@
+* {
+  background: #000;
+  color: #fff;
+}
+
+.container {
+  padding-left: 18px;
+}
+
+.icon{
+  cursor: pointer;
+}
