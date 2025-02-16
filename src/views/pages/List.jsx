@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const List = ({ list, addFolder }) => {
+const List = ({ list, addNode, deleteNode }) => {
   const [isExpanded, setIsExpanded] = useState({});
   return (
     <>
@@ -24,15 +24,26 @@ const List = ({ list, addFolder }) => {
             {node?.isFolder && (
               <img
                 src="https://cdn-icons-png.flaticon.com/512/9238/9238208.png"
-                height={15}
-                width={15}
-                className="add-folder icon"
-                onClick={() => addFolder(node?.id)}
+                height={14}
+                width={14}
+                className="action-btn-add icon"
+                onClick={() => addNode(node?.id)}
               />
             )}
+            <img
+              src="https://icon-library.com/images/delete-icon-image/delete-icon-image-15.jpg"
+              height={14}
+              width={14}
+              className="action-btn-delete icon"
+              onClick={() => deleteNode(node?.id)}
+            />
           </span>
           {isExpanded?.[node.name] && node?.children && (
-            <List list={node?.children} addFolder={addFolder}/>
+            <List
+              list={node?.children}
+              addNode={addNode}
+              deleteNode={deleteNode}
+            />
           )}
         </div>
       ))}

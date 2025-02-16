@@ -11,6 +11,9 @@
   cursor: pointer;
 }
 
-.add-folder {
-  margin-left: 15px;
+.action-btn-add {
+  margin-left: 25px;
+}
+.action-btn-delete {
+  margin-left: 8px;
 }
